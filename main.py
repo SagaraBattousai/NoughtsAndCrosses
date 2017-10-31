@@ -2,6 +2,7 @@
 
 ROW_LEN = 3
 Symbols = [" ", "O", "X"]
+NUM_PLAYERS = 2
 
 def init_board():
     return [0,0,0,0,0,0,0,0,0]
@@ -18,10 +19,25 @@ def print_board(board):
             print("|" + symbol, end='')
 
 
+def make_move(player):
+    pass
+
+def game_over():
+    return True, 0
+
+def display_winner(winner):
+    pass
+
+
+
 
 if __name__ == "__main__":
     board = init_board()
-    print_board(board)
-
+    i = 0;
     while(True):
-        
+        print_board(board)
+        make_move(i % NUM_PLAYERS)
+        end, winner = game_over()
+        if end:
+            display_winner(winner)
+            break;
